@@ -55,6 +55,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
@@ -63,7 +64,7 @@ body {
     line-height: 1.65;
     color: var(--text-body);
     background-color: var(--white);
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -816,7 +817,7 @@ body.nav-open {
 /* 10. Services Section */
 .services-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
 }
 
@@ -1557,7 +1558,7 @@ body.nav-open {
 /* 17. Contact & Forms */
 .contact-info-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
     gap: 25px;
     margin-bottom: 45px;
 }
@@ -2097,6 +2098,7 @@ footer {
         border-left: 1px solid rgba(197, 160, 89, 0.2);
         transform: translateX(100%);
         visibility: hidden;
+        pointer-events: none;
         transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
         z-index: 1001;
         overflow-y: auto;
@@ -2105,6 +2107,7 @@ footer {
     .nav-links.active {
         transform: translateX(0);
         visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-links li {
@@ -3091,12 +3094,84 @@ footer {
     }
 }
 
+.about-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.about-overview-grid .about-text {
+    padding-right: 16px;
+}
+
+@media (max-width: 900px) {
+    .about-overview-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .about-overview-grid .about-text {
+        padding-right: 0;
+    }
+}
+
 @media (max-width: 600px) {
-    .hero h1 { font-size: 2.1rem; }
-    .hero-buttons .btn { width: 100%; }
+    .container { padding: 0 16px; }
+    .section-padding { padding: 52px 0; }
+    .section-title { margin-bottom: 32px; }
+    .section-title h2 { font-size: 1.85rem; }
+
+    .logo-img { height: 42px; }
+    .logo-title { font-size: 0.96rem; }
+    .logo-subtitle { display: none; }
+
+    .hero {
+        height: auto;
+        min-height: 520px;
+        padding: 68px 14px;
+    }
+    .hero-content { padding: 28px 20px; }
+    .hero-badge {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        padding: 5px 12px;
+        margin-bottom: 14px;
+    }
+    .hero h1 { font-size: 2rem; line-height: 1.2; }
+    .hero p { font-size: 0.96rem; margin-bottom: 24px; }
+    .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
     .hero-buttons a:last-child { margin-left: 0 !important; }
+
+    .stats-section { padding: 38px 0; }
+    .stat-number { font-size: 2.5rem; }
+    .stat-plus { font-size: 1.7rem; }
+
+    .portfolio-filter-bar { gap: 8px; margin-bottom: 24px; }
+    .filter-btn { padding: 8px 14px; font-size: 0.8rem; }
+
+    .services-card-grid,
+    .features-grid,
+    .values-grid,
+    .contact-info-cards,
+    .project-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
     .form-row { grid-template-columns: 1fr; }
-    .project-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .toast-notification { left: 15px; right: 15px; bottom: 15px; }
+    input, select, textarea { font-size: 16px !important; }
+
+    .experience-record-wrap,
+    .profile-panel,
+    .equipment-card,
+    .job-card,
+    .info-card {
+        padding: 20px 16px;
+    }
+
+    .floating-actions { bottom: 16px; right: 16px; gap: 10px; }
+    .float-btn { width: 46px; height: 46px; font-size: 1.2rem; }
+    .toast-notification { left: 14px; right: 14px; bottom: 14px; }
 }

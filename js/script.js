@@ -100,8 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMobileMenu();
 
         // Handle scrolling & Clean URLs
+        const routeTitles = {
+            '/': 'Bhagat Group of Construction | Construction Company in Nepal (Kathmandu, Birgunj, Janakpur, Bardibas)',
+            '/about': 'About Us | Bhagat Group of Construction Pvt. Ltd. (Reg. 196819/075/076)',
+            '/services': 'Engineering & Construction Services | Bhagat Group of Construction Nepal',
+            '/projects': '24+ Civil & Infrastructure Projects | Bhagat Group of Construction Nepal',
+            '/careers': 'Careers & Engineering Openings | Bhagat Group of Construction Nepal',
+            '/contact': 'Contact Us | Bhagat Group of Construction (Kathmandu & Bardibas, Nepal)'
+        };
         const canUseCleanUrl = window.location.protocol !== 'file:';
         function pushCleanRoute(route) {
+            if (routeTitles[route]) {
+                document.title = routeTitles[route];
+            }
+            const canonicalEl = document.getElementById('canonical-link');
+            if (canonicalEl) {
+                canonicalEl.setAttribute('href', `https://bhagatgroupconstruction.com.np${route}`);
+            }
             if (!canUseCleanUrl) {
                 history.pushState(null, '', route === '/' ? '#home' : `#${route.slice(1)}`);
                 return;
@@ -673,21 +688,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
-
-    // 11b. Office Map Switcher (Head Office vs Branch Office)
-    window.switchOfficeMap = function (office, btn) {
-        const iframe = document.getElementById('office-map-iframe');
-        if (!iframe) return;
-        const mapUrls = {
-            kathmandu: 'https://maps.google.com/maps?q=New%20Baneshwor-10,%20Kathmandu,%20Nepal&t=&z=15&ie=UTF8&iwloc=&output=embed',
-            bardibas: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487.89279581781!2d85.8923315758535!3d26.98714031666666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ec730070849ad5%3A0xb88187576762c4f9!2sBhagat%20Group%20of%20Construction!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus'
-        };
-        if (mapUrls[office]) {
-            iframe.src = mapUrls[office];
-        }
-        document.querySelectorAll('.map-tab').forEach(tab => tab.classList.remove('active'));
-        if (btn) btn.classList.add('active');
-    };
 
     // 11c. Careers Role Pre-select & Scroll to Application Form
     window.applyForRole = function (roleName) {
