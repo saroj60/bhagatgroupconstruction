@@ -99,10 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close mobile drawer if open
         closeMobileMenu();
 
-        // Handle scrolling & Hash
+        // Handle scrolling & Clean URLs
+        const canUseCleanUrl = window.location.protocol !== 'file:';
+        function pushCleanRoute(route) {
+            if (!canUseCleanUrl) {
+                history.pushState(null, '', route === '/' ? '#home' : `#${route.slice(1)}`);
+                return;
+            }
+            if (window.location.pathname !== route || window.location.hash) {
+                history.pushState(null, '', route);
+            }
+        }
+
         if (sectionId) {
             if (updateHash) {
-                history.pushState(null, '', `#${sectionId}`);
+                pushCleanRoute(`/${sectionId}`);
             }
             setTimeout(() => {
                 const el = document.getElementById(sectionId);
@@ -114,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 120);
         } else {
             if (updateHash) {
-                history.pushState(null, '', `#${viewName}`);
+                pushCleanRoute(viewName === 'home' ? '/' : `/${viewName}`);
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -123,28 +134,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make switchView accessible globally
     window.switchView = switchView;
 
-    // Handle back/forward navigation using hashchange
-    window.addEventListener('popstate', handleHashRouting);
+    // Handle back/forward navigation using popstate
+    window.addEventListener('popstate', handleCleanRouting);
 
-    function handleHashRouting() {
-        const hash = window.location.hash.replace('#', '').toLowerCase();
-        if (hash === 'about') {
+    function handleCleanRouting() {
+        // Restore path saved by 404.html on GitHub Pages
+        const redirectPath = sessionStorage.getItem('spa_redirect');
+        if (redirectPath) {
+            sessionStorage.removeItem('spa_redirect');
+            if (window.location.protocol !== 'file:') {
+                history.replaceState(null, '', redirectPath);
+            }
+        }
+
+        const rawPath = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+        const rawHash = window.location.hash.replace('#', '').toLowerCase();
+        const route = rawPath && rawPath !== 'index.html' ? rawPath : rawHash;
+
+        if (route === 'about') {
             switchView('about', null, false);
-        } else if (hash === 'services') {
+        } else if (route === 'services') {
             switchView('services', null, false);
-        } else if (hash === 'projects') {
+        } else if (route === 'projects') {
             switchView('projects', null, false);
-        } else if (hash === 'careers') {
+        } else if (route === 'careers') {
             switchView('careers', null, false);
-        } else if (['stats', 'contact'].includes(hash)) {
-            switchView('home', hash, false);
+        } else if (['stats', 'contact'].includes(route)) {
+            switchView('home', route, false);
         } else {
             switchView('home', null, false);
         }
     }
 
     // Initialize route on page load
-    handleHashRouting();
+    handleCleanRouting();
 
     // Mobile drawer toggle, backdrop, Escape key, and desktop resize reset
     if (menuToggle && navList) {
