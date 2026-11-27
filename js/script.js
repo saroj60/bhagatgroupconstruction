@@ -166,6 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const rawHash = window.location.hash.replace('#', '').toLowerCase();
         const route = rawPath && rawPath !== 'index.html' ? rawPath : rawHash;
 
+        if (window.location.protocol !== 'file:' && window.location.hash) {
+            const cleanTarget = !route || route === 'home' ? '/' : `/${route}`;
+            history.replaceState(null, '', cleanTarget);
+        }
+
         if (route === 'about') {
             switchView('about', null, false);
         } else if (route === 'services') {
