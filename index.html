@@ -50,7 +50,7 @@
         }
       ],
       "telephone": "+977-9815769007",
-      "email": "bhagatgrouppvt@gmail.com",
+      "email": "info@bhagatgroupconstruction.com.np",
       "areaServed": "Nepal",
       "priceRange": "$$"
     }
@@ -92,14 +92,14 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-info">
-                <span><a href="mailto:bhagatgrouppvt@gmail.com"><i class="fas fa-envelope"></i> bhagatgrouppvt@gmail.com</a></span>
+                <span><a href="mailto:info@bhagatgroupconstruction.com.np"><i class="fas fa-envelope"></i> info@bhagatgroupconstruction.com.np</a></span>
                 <span><a href="tel:+9779815769007"><i class="fas fa-phone-alt"></i> +977-9815769007</a></span>
             </div>
             <div class="top-social">
                 <span>Connect With Us:</span>
                 <a href="https://www.facebook.com/share/17MLLm4iAN/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://wa.me/9779815769007" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:bhagatgrouppvt@gmail.com" title="Email"><i class="fas fa-paper-plane"></i></a>
+                <a href="mailto:info@bhagatgroupconstruction.com.np" title="Email"><i class="fas fa-paper-plane"></i></a>
             </div>
         </div>
     </div>
@@ -107,37 +107,57 @@
     <!-- Navigation -->
     <header id="main-header">
         <div class="container">
-            <nav>
-                <a onclick="switchView('home')" href="javascript:void(0)" class="logo" title="Bhagat Group of Construction">
+            <nav aria-label="Primary Navigation">
+                <a onclick="switchView('home'); return false;" href="#home" class="logo" title="Bhagat Group of Construction">
                     <img src="images/logo1.png" alt="Bhagat Group Logo" class="logo-img">
+                    <div class="logo-brand">
+                        <span class="logo-title">Bhagat Group</span>
+                        <span class="logo-subtitle">Construction &amp; Engineering</span>
+                    </div>
                 </a>
-                <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
+                    <span class="hamburger-box" aria-hidden="true">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+                <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
                 <ul class="nav-links" id="nav-list">
-                    <li><a onclick="switchView('home')" href="javascript:void(0)" class="active-link" id="link-home">Home</a></li>
-                    <li><a onclick="switchView('about')" href="javascript:void(0)" id="link-about">About Us</a></li>
-                    <li><a onclick="switchView('home', 'services')" href="javascript:void(0)">Services</a></li>
-                    <li><a onclick="switchView('home', 'projects')" href="javascript:void(0)">Projects</a></li>
-                    <li><a onclick="switchView('careers')" href="javascript:void(0)" id="link-careers">Careers</a></li>
-                    <li><a onclick="switchView('home', 'contact')" href="javascript:void(0)">Contact Us</a></li>
-                    <li class="nav-cta-item"><a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="btn btn-sm btn-primary nav-cta-btn">Get a Quote</a></li>
+                    <li><a onclick="switchView('home'); return false;" href="#home" class="active-link" id="link-home">Home</a></li>
+                    <li><a onclick="switchView('about'); return false;" href="#about" id="link-about">About Us</a></li>
+                    <li><a onclick="switchView('services'); return false;" href="#services" id="link-services">Services</a></li>
+                    <li><a onclick="switchView('projects'); return false;" href="#projects" id="link-projects">Projects</a></li>
+                    <li><a onclick="switchView('careers'); return false;" href="#careers" id="link-careers">Careers</a></li>
+                    <li><a onclick="switchView('home', 'contact'); return false;" href="#contact" id="link-contact">Contact Us</a></li>
+                    <li class="nav-cta-item">
+                        <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary nav-cta-btn">
+                            <span>Get a Quote</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-mobile-footer" aria-label="Quick Contact">
+                        <div class="nav-mobile-contact">
+                            <a href="tel:+9779815769007"><i class="fas fa-phone-alt"></i> +977-9815769007</a>
+                            <a href="mailto:info@bhagatgroupconstruction.com.np"><i class="fas fa-envelope"></i> info@bhagatgroupconstruction.com.np</a>
+                        </div>
+                        <div class="nav-mobile-social">
+                            <a href="https://www.facebook.com/share/17MLLm4iAN/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/9779815769007" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:info@bhagatgroupconstruction.com.np" aria-label="Email"><i class="fas fa-paper-plane"></i></a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
+        <div class="nav-scroll-progress" id="nav-scroll-progress" aria-hidden="true"></div>
     </header>
 
     <!-- ========================== HOME VIEW ========================== -->
     <div id="view-home">
         <!-- Hero Section -->
         <section id="home" class="hero" data-aos="fade-in">
-            <ul class="hero-slideshow">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+            <canvas id="hero-construction-canvas" class="hero-canvas" aria-hidden="true"></canvas>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
@@ -146,8 +166,8 @@
                 <h1>Building Dreams <br> <span class="gradient-text">Constructing Reality</span></h1>
                 <p>Leading the way in civil engineering, hydropower auxiliary works, highways, and institutional construction across Nepal with uncompromising safety and precision.</p>
                 <div class="hero-buttons">
-                    <a onclick="switchView('home', 'projects')" href="javascript:void(0)" class="btn btn-primary"><i class="fas fa-hard-hat" style="margin-right: 8px;"></i> View Our Work</a>
-                    <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="btn btn-outline" style="margin-left: 15px;"><i class="fas fa-file-signature" style="margin-right: 8px;"></i> Get a Free Quote</a>
+                    <a onclick="switchView('projects'); return false;" href="#projects" class="btn btn-primary"><i class="fas fa-hard-hat" style="margin-right: 8px;"></i> View Our Work</a>
+                    <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-outline" style="margin-left: 15px;"><i class="fas fa-file-signature" style="margin-right: 8px;"></i> Get a Free Quote</a>
                 </div>
             </div>
         </section>
@@ -197,41 +217,71 @@
                     <p>Comprehensive civil engineering solutions tailored to meet Nepal's evolving infrastructural demands.</p>
                 </div>
                 <div class="services-card-grid">
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="service-icon"><i class="fas fa-water"></i></div>
-                        <h3>Hydropower Civil Works</h3>
-                        <p>Specialized civil infrastructure for hydropower projects including camp facilities, administrative quarters, and auxiliary buildings.</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="service-card-media">
+                            <img src="images/service-hydropower.jpg" alt="Hydropower Civil Works" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-water"></i></div>
+                            <h3>Hydropower Civil Works</h3>
+                            <p>Specialized civil infrastructure for hydropower projects including camp facilities, administrative quarters, and auxiliary buildings.</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="service-icon"><i class="fas fa-building"></i></div>
-                        <h3>Building Construction</h3>
-                        <p>High-standard residential, commercial, institutional, and healthcare buildings engineered with durable materials and precision.</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-card-media">
+                            <img src="images/service-building.jpg" alt="Building and Landscaping Works" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-building"></i></div>
+                            <h3>Building &amp; Landscaping Works</h3>
+                            <p>High-standard residential, commercial, institutional, and healthcare buildings along with landscaping and associated civil works.</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="service-icon"><i class="fas fa-road"></i></div>
-                        <h3>Road & Highway Projects</h3>
-                        <p>Construction, widening, and blacktopping of roads, municipality urban links, and rural connectivity corridors across Nepal.</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="service-card-media">
+                            <img src="images/service-road.jpg" alt="Road and Highway Projects" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-road"></i></div>
+                            <h3>Road &amp; Highway Projects</h3>
+                            <p>Construction, widening, and blacktopping of roads, municipality urban links, and rural connectivity corridors across Nepal.</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="service-icon"><i class="fas fa-tint"></i></div>
-                        <h3>Irrigation & Drainage</h3>
-                        <p>Construction of irrigation canals, storm drainage structures, water retaining structures, and agricultural flood-control networks.</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="service-card-media">
+                            <img src="images/service-irrigation.jpg" alt="Irrigation and Drainage Structures" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-tint"></i></div>
+                            <h3>Irrigation &amp; Drainage</h3>
+                            <p>Construction of irrigation canals, storm drainage structures, water retaining structures, and agricultural flood-control networks.</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="service-icon"><i class="fas fa-faucet"></i></div>
-                        <h3>Water Supply Infrastructure</h3>
-                        <p>Overhead water tanks, lifting and distribution pipeline schemes, deep-well pumping stations, and community sanitation facilities.</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-card-media">
+                            <img src="images/service-water.jpg" alt="Water Supply Infrastructure" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-faucet"></i></div>
+                            <h3>Water Supply Infrastructure</h3>
+                            <p>Overhead water tanks, lifting and distribution pipeline schemes, deep-well pumping stations, and community sanitation facilities.</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="service-icon"><i class="fas fa-tools"></i></div>
-                        <h3>Retrofitting & Strengthening</h3>
-                        <p>Seismic retrofitting, structural rehabilitation, and strengthening of critical buildings (such as post-earthquake schools and hospitals).</p>
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card has-media" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="service-card-media">
+                            <img src="images/service-retrofitting.jpg" alt="Retrofitting and Structural Strengthening" loading="lazy">
+                        </div>
+                        <div class="service-card-body">
+                            <div class="service-icon"><i class="fas fa-tools"></i></div>
+                            <h3>Retrofitting &amp; Strengthening</h3>
+                            <p>Seismic retrofitting, structural rehabilitation, and strengthening of critical buildings (such as post-earthquake schools and hospitals).</p>
+                            <a onclick="switchView('services'); return false;" href="#services" class="service-link">Explore Scope <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -311,10 +361,78 @@
                     </div>
                 </div>
 
-                <div class="text-center" style="margin-top: 50px;">
+                <div class="text-center" style="margin-top: 50px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
                     <button type="button" onclick="showAllProjects()" class="btn btn-outline" data-aos="fade-up">
                         <i class="fas fa-layer-group" style="margin-right: 8px;"></i> Display All Projects
                     </button>
+                    <button type="button" onclick="toggleExperienceRecord()" id="toggle-exp-btn" class="btn btn-primary" data-aos="fade-up">
+                        <i class="fas fa-chevron-up" style="margin-right: 8px;"></i> Hide Experience Record (23 Projects)
+                    </button>
+                </div>
+
+                <!-- Complete 23-Project Experience Record Table (from Company Profile) -->
+                <div id="experience-record-wrap" class="experience-record-wrap">
+                    <div class="experience-record-header">
+                        <div>
+                            <h3>Complete Project Experience Record</h3>
+                            <p>Verified government, municipal, hydropower, and institutional civil works across Nepal.</p>
+                        </div>
+                        <button type="button" onclick="toggleExperienceRecord()" class="btn btn-sm btn-outline-dark" aria-label="Close experience record">
+                            <i class="fas fa-times"></i> Hide Record
+                        </button>
+                    </div>
+                    <div class="experience-controls">
+                        <div class="exp-search-wrap">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <input type="search" id="exp-search-input" placeholder="Search by client, project name, or location..." aria-label="Search projects">
+                        </div>
+                        <select id="exp-type-filter" aria-label="Filter by nature of work">
+                            <option value="all">All Work Types (23)</option>
+                            <option value="Building Construction">Building Construction</option>
+                            <option value="Road Construction">Road Construction</option>
+                            <option value="Irrigation Channel">Irrigation Channel</option>
+                            <option value="Water Supply">Water Supply</option>
+                            <option value="Retrofitting">Retrofitting</option>
+                            <option value="Retaining Structure">Retaining Structure</option>
+                        </select>
+                    </div>
+                    <div class="profile-table-scroll">
+                        <table class="profile-data-table">
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Name of Client</th>
+                                    <th>Name of Project</th>
+                                    <th>Nature of Work</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>CLPIU, Gyaneshwor Kathmandu</td><td>Slope Stabilation/Mitigation Measure of Shree SS Chilaunedanda</td><td><span class="work-badge">Retaining Structure</span></td></tr>
+                                <tr><td>2</td><td>Rajbiraj Municipality</td><td>Construction of CTEVT Building of Rajbiraj-01</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>3</td><td>Rajbiraj Municipality</td><td>Construction of School Building of Rajbiraj Municipality</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>4</td><td>Shree Tribhuvan Secondary School, Gaushala</td><td>Construction of 3C12 Classroom Building of TSS, Gaushala</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>5</td><td>Gaushala Municipality</td><td>Construction of 3C9 Classroom Building at Nigaul, Gaushala</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>6</td><td>Shree Prasad SS, Aurahi</td><td>Construction of Lab &amp; Laboratory Building of Shree Prasad SS, Aurahi</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>7</td><td>FPIU, Dhanusha</td><td>Ring road Construction Works (Baluwa Bazar–Roja Bazar–Padau Postal Road Section), Balba New Town, Mahottari</td><td><span class="work-badge">Road Construction</span></td></tr>
+                                <tr><td>8</td><td>IDO, Mahottari</td><td>Construction of Balaba Municipality-11, Bhalani Adhyanpur–Dolathi–Bhetpur Road, Mahottari</td><td><span class="work-badge">Road Construction</span></td></tr>
+                                <tr><td>9</td><td>IDO Dhanusha, Madhesh Province</td><td>Construction of Khairwani Border to Kheshraha Magarthana Road, Mahottari</td><td><span class="work-badge">Road Construction</span></td></tr>
+                                <tr><td>10</td><td>Federal Water Supply and Sanitation Division</td><td>Entire Construction Works for Mathillo Dungeshwor Loharekhola Baik Dullu Lifting Water Supply Project</td><td><span class="work-badge">Water Supply</span></td></tr>
+                                <tr><td>11</td><td>CLPIU, Kathmandu</td><td>Construction/Retrofitting of 21 Schools Building in Okhaldhunga &amp; Sindhuli Districts</td><td><span class="work-badge">Retrofitting</span></td></tr>
+                                <tr><td>12</td><td>Rajbiraj Municipality</td><td>Construction of School Buildings at Rajbiraj Municipality Ward No. 1, 4, 9, 13 &amp; 15</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>13</td><td>Rajbiraj Municipality</td><td>Construction of College Building for Rajbiraj Polytechnic Institute, Ward No. 1</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>14</td><td>Rajbiraj Municipality</td><td>Up-gradation of Different Inter-connected Roads within Rajbiraj Municipality</td><td><span class="work-badge">Road Construction</span></td></tr>
+                                <tr><td>15</td><td>Impact Nepal</td><td>Construction of Ear Care Centre at Rajbiraj, Nepal</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>16</td><td>Sukhipur Municipality</td><td>Construction of 15 Bed Municipal Hospital Building, Sukhipur Municipality-8, Siraha</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>17</td><td>Economic Corridor Office, Bardibas, Mahottari</td><td>Construction of Municipal Agricultural and Livestock Centre (MALSC) under ECO Bardibas Phase IV</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>18</td><td>Simbuwa Remit Hydro Limited</td><td>Construction of Office Building, Camp Facilities and drinking water supply scheme of SKHEP</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>19</td><td>FPIU, Dhanusha</td><td>Construction of Assembly Hall at Kshireshwarnath Municipality, Dhanusha</td><td><span class="work-badge">Building Construction</span></td></tr>
+                                <tr><td>20</td><td>Road Division Lahan</td><td>Road Upgrading Works of Madar–Chaurhawa, Golbazar–Siraha–Saghure Udaypur, Mirchaya–Katari Ghurmi, Hilepani–Okhaldhunga Salleri Sadak With 4-lane (Siraha Bazar Hanuman Mandir to Madar) NH-20</td><td><span class="work-badge">Road Construction</span></td></tr>
+                                <tr><td>21</td><td>Water Resource and Irrigation Development Division, Sunsari</td><td>Construction of Kajara Khola Kataghara Bandh ISP, Ramdhuni 6 and 7 Sunsari</td><td><span class="work-badge">Irrigation Channel</span></td></tr>
+                                <tr><td>22</td><td>Water Resource and Irrigation Development Division, Biratnagar, Morang</td><td>Construction of Aadarsha Paini Irrigation Sub Project, Pathrisanischare 5, 6, 7</td><td><span class="work-badge">Irrigation Channel</span></td></tr>
+                                <tr><td>23</td><td>CLPIU, Bhaktapur</td><td>Construction of School Buildings in Three Schools of Jhapa and Morang Districts (having 2000+ students)</td><td><span class="work-badge">Building Construction</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -500,7 +618,7 @@
                     <h2>Ready to Build Your Next Landmark Project?</h2>
                     <p>Partner with Bhagat Group of Construction for reliable, certified, and on-schedule project delivery.</p>
                     <div class="cta-actions">
-                        <a onclick="switchView('home', 'contact')" href="javascript:void(0)" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a Consultation</a>
+                        <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a Consultation</a>
                         <a href="https://wa.me/9779815769007" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-cta"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
                     </div>
                 </div>
@@ -515,32 +633,50 @@
                     <h2>Get In Touch With Us</h2>
                     <p>Have an inquiry, project tender, or partnership proposal? Reach our engineering desk today.</p>
                 </div>
-                <div class="contact-info-cards">
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info-cards address-grid">
+                    <div class="info-card office-card" data-aos="fade-up" data-aos-delay="100">
+                        <span class="office-badge"><i class="fas fa-landmark"></i> Registered Head Office</span>
                         <div class="info-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <h4>Head Office</h4>
-                        <p>New Baneshwor-10<br>Kathmandu, Bagmati Province, Nepal</p>
-                        <hr class="card-divider">
-                        <h4>Branch Office</h4>
-                        <p>Bardibas-01<br>Mahottari, Madhesh Province, Nepal</p>
+                        <h4>Kathmandu Head Office</h4>
+                        <p class="office-address">New Baneshwor-10<br>Kathmandu, Bagmati Province, Nepal</p>
+                        <div class="office-meta">
+                            <span>Reg. No: <strong>196819/075/076</strong></span>
+                            <span>PAN/VAT: <strong>606618384</strong></span>
+                        </div>
+                        <a href="https://maps.google.com/?q=New+Baneshwor-10,+Kathmandu,+Nepal" target="_blank" rel="noopener noreferrer" class="office-map-link">
+                            <i class="fas fa-directions"></i> View on Google Maps
+                        </a>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="info-icon"><i class="fas fa-phone-volume"></i></div>
-                        <h4>Call Our Office</h4>
-                        <p>
-                            <a href="tel:+9779815769007" class="contact-link">+977-9815769007</a>
-                        </p>
-                        <hr class="card-divider">
-                        <small style="color: var(--accent-gold); font-weight: 600;">Mon - Sat: 9:00 AM - 6:00 PM</small>
+
+                    <div class="info-card office-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="office-badge"><i class="fas fa-truck-moving"></i> Provincial Operations</span>
+                        <div class="info-icon"><i class="fas fa-building"></i></div>
+                        <h4>Bardibas Branch Office</h4>
+                        <p class="office-address">Bardibas-01<br>Mahottari, Madhesh Province, Nepal</p>
+                        <div class="office-meta">
+                            <span>Operations: <strong>Field &amp; Equipment Hub</strong></span>
+                            <span>Coverage: <strong>All 7 Provinces</strong></span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Bhagat+Group+of+Construction,+Bardibas,+Nepal" target="_blank" rel="noopener noreferrer" class="office-map-link">
+                            <i class="fas fa-directions"></i> View on Google Maps
+                        </a>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="info-icon"><i class="fas fa-envelope-open-text"></i></div>
-                        <h4>Direct Email</h4>
-                        <p>
-                            <a href="mailto:bhagatgrouppvt@gmail.com" class="contact-link">bhagatgrouppvt@gmail.com</a>
+
+                    <div class="info-card office-card" data-aos="fade-up" data-aos-delay="300">
+                        <span class="office-badge"><i class="fas fa-envelope-open-text"></i> Engineering &amp; Tender Desk</span>
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Direct Contact &amp; Hours</h4>
+                        <p class="office-address">
+                            <a href="tel:+9779815769007" class="contact-link">+977-9815769007</a><br>
+                            <a href="mailto:info@bhagatgroupconstruction.com.np" class="contact-link">info@bhagatgroupconstruction.com.np</a>
                         </p>
-                        <hr class="card-divider">
-                        <small style="color: var(--text-muted);">Quick response within 24 business hours</small>
+                        <div class="office-meta">
+                            <span>Hours: <strong>Mon – Sat, 9:00 AM – 6:00 PM</strong></span>
+                            <span>Response: <strong>Within 24 Business Hours</strong></span>
+                        </div>
+                        <a href="mailto:info@bhagatgroupconstruction.com.np" class="office-map-link">
+                            <i class="fas fa-paper-plane"></i> Send Direct Email
+                        </a>
                     </div>
                 </div>
 
@@ -575,8 +711,338 @@
                         </form>
                     </div>
                     <div class="map-container">
-                        <iframe title="Bhagat Group Construction Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487.89279581781!2d85.8923315758535!3d26.98714031666666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ec730070849ad5%3A0xb88187576762c4f9!2sBhagat%20Group%20of%20Construction!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="map-switcher" role="tablist" aria-label="Office Map Locations">
+                            <button type="button" class="map-tab active" onclick="switchOfficeMap('kathmandu', this)">
+                                <i class="fas fa-landmark"></i> Head Office (Kathmandu)
+                            </button>
+                            <button type="button" class="map-tab" onclick="switchOfficeMap('bardibas', this)">
+                                <i class="fas fa-building"></i> Branch Office (Bardibas)
+                            </button>
+                        </div>
+                        <iframe id="office-map-iframe" title="Bhagat Group Construction Location" src="https://maps.google.com/maps?q=New%20Baneshwor-10,%20Kathmandu,%20Nepal&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================== SERVICES VIEW ========================== -->
+    <div id="view-services" class="hidden">
+        <section class="page-header">
+            <div class="container" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--accent-gold);">Our Capabilities</span>
+                <h1>Engineering &amp; Construction Services</h1>
+                <p>Turnkey civil engineering, hydropower auxiliary facilities, highways, municipal buildings, irrigation, water supply, and seismic retrofitting across Nepal.</p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="services-detail-grid">
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-hydropower.jpg" alt="Hydropower Civil Works" loading="lazy"><span class="sdc-tag">Hydropower</span></div>
+                        <div class="sdc-body">
+                            <h3>Civil Works for Hydropower Projects</h3>
+                            <p>Complete supporting civil infrastructure for hydropower developments, proven on the Simbuwa Remit Hydropower Project (SKHEP).</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> Administrative &amp; office buildings</li>
+                                <li><i class="fas fa-check"></i> Camp facilities &amp; residential blocks</li>
+                                <li><i class="fas fa-check"></i> Retaining structures &amp; site drinking water schemes</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-building.jpg" alt="Building and Landscaping Works" loading="lazy"><span class="sdc-tag">Buildings &amp; Landscaping</span></div>
+                        <div class="sdc-body">
+                            <h3>Building Construction &amp; Landscaping</h3>
+                            <p>Turnkey RCC and steel-framed institutional, healthcare, educational, and municipal buildings with complete site landscaping.</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> Hospitals, health posts &amp; ear care centres</li>
+                                <li><i class="fas fa-check"></i> Schools, CTEVT &amp; polytechnic college buildings</li>
+                                <li><i class="fas fa-check"></i> Municipal assembly halls, MALSC &amp; landscaping</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-road.jpg" alt="Road and Highway Projects" loading="lazy"><span class="sdc-tag">Roads &amp; Highways</span></div>
+                        <div class="sdc-body">
+                            <h3>Road &amp; Highway Projects</h3>
+                            <p>Highway upgrading, 4-lane urban corridors, ring roads, and blacktopped municipal road networks across Madhesh and Koshi provinces.</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> NH-20 4-lane highway upgrading &amp; blacktopping</li>
+                                <li><i class="fas fa-check"></i> Ring roads &amp; interconnected municipal corridors</li>
+                                <li><i class="fas fa-check"></i> Sub-base, paver asphalt &amp; roadside drainage</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-irrigation.jpg" alt="Irrigation and Drainage Structures" loading="lazy"><span class="sdc-tag">Irrigation &amp; Drainage</span></div>
+                        <div class="sdc-body">
+                            <h3>Irrigation &amp; Drainage Structures</h3>
+                            <p>Engineered concrete irrigation channels, headworks, and flood-control drainage networks supporting agricultural productivity.</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> Main &amp; branch concrete irrigation canals</li>
+                                <li><i class="fas fa-check"></i> Bandh, sluice gates &amp; retaining walls</li>
+                                <li><i class="fas fa-check"></i> Storm drainage &amp; slope stabilization works</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-water.jpg" alt="Water Supply Infrastructure" loading="lazy"><span class="sdc-tag">Water Supply</span></div>
+                        <div class="sdc-body">
+                            <h3>Water Supply &amp; Civil Infrastructure</h3>
+                            <p>End-to-end lifting water supply schemes, elevated storage reservoirs, and community sanitation infrastructure.</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> Lifting water supply &amp; pumping stations</li>
+                                <li><i class="fas fa-check"></i> Overhead tanks &amp; distribution pipelines</li>
+                                <li><i class="fas fa-check"></i> Treatment, intake &amp; sanitation facilities</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+
+                    <article class="service-detail-card">
+                        <div class="sdc-image"><img src="images/service-retrofitting.jpg" alt="Retrofitting and Structural Strengthening" loading="lazy"><span class="sdc-tag">Retrofitting</span></div>
+                        <div class="sdc-body">
+                            <h3>Retrofitting &amp; Structural Strengthening</h3>
+                            <p>Seismic rehabilitation and structural strengthening of schools and public buildings across earthquake-affected districts.</p>
+                            <ul class="service-scope-list">
+                                <li><i class="fas fa-check"></i> RCC jacketing &amp; shear wall strengthening</li>
+                                <li><i class="fas fa-check"></i> Steel X-bracing &amp; seismic belt installation</li>
+                                <li><i class="fas fa-check"></i> Proven across 21+ schools in Okhaldhunga &amp; Sindhuli</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact'); return false;" href="#contact" class="btn btn-sm btn-primary">Request Tender / Quote</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="profile-panel" style="margin-top: 40px;">
+                    <h3><i class="fas fa-sitemap"></i> Five Functional Execution Divisions</h3>
+                    <div class="divisions-grid">
+                        <div class="division-chip"><i class="fas fa-hard-hat"></i><span>Civil Construction Division</span></div>
+                        <div class="division-chip"><i class="fas fa-road"></i><span>Infrastructure &amp; Road Works Division</span></div>
+                        <div class="division-chip"><i class="fas fa-shield-alt"></i><span>Structural Rehabilitation &amp; Retrofitting</span></div>
+                        <div class="division-chip"><i class="fas fa-cogs"></i><span>Mechanical &amp; Fabrication Support</span></div>
+                        <div class="division-chip"><i class="fas fa-drafting-compass"></i><span>Survey, Design &amp; Technical Support</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================== PROJECTS VIEW ========================== -->
+    <div id="view-projects" class="hidden">
+        <section class="page-header">
+            <div class="container" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--accent-gold);">Complete Portfolio</span>
+                <h1>Our Projects Across Nepal</h1>
+                <p>24 civil engineering, building, road, hydropower, water supply, irrigation, and retrofitting projects delivered by Bhagat Group.</p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="projects-page-controls">
+                    <div class="portfolio-filter-bar" id="projects-page-filters">
+                        <button type="button" class="filter-btn active" data-proj-filter="all">All Projects (24)</button>
+                        <button type="button" class="filter-btn" data-proj-filter="building">Building Construction</button>
+                        <button type="button" class="filter-btn" data-proj-filter="road">Road Construction</button>
+                        <button type="button" class="filter-btn" data-proj-filter="hydropower">Hydropower</button>
+                        <button type="button" class="filter-btn" data-proj-filter="water">Water &amp; Irrigation</button>
+                        <button type="button" class="filter-btn" data-proj-filter="retrofitting">Retrofitting &amp; Retaining</button>
+                    </div>
+                    <div class="exp-search-wrap" style="max-width: 340px;">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="search" id="projects-page-search" placeholder="Search all 24 projects..." aria-label="Search all 24 projects">
+                    </div>
+                </div>
+
+                <div class="projects-all-grid" id="projects-all-grid">
+                    <!-- Featured Photo Projects (6) -->
+                    <article class="project-record-card has-photo" data-proj-cat="hydropower" onclick="openProjectModal('simbuwa')">
+                        <div class="prc-thumb"><img src="images/pro1.jpg" alt="Simbuwa Remit Hydro Project" loading="lazy"><span class="prc-num">#18</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Hydropower · Building</span>
+                            <h3>Office Building, Camp Facilities &amp; Drinking Water Scheme of SKHEP</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Simbuwa Remit Hydro Limited</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card has-photo" data-proj-cat="building" onclick="openProjectModal('sukhipur-hospital')">
+                        <div class="prc-thumb"><img src="images/pro2.jpg" alt="Sukhipur 15 Bed Municipal Hospital" loading="lazy"><span class="prc-num">#16</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Building Construction</span>
+                            <h3>Construction of 15 Bed Municipal Hospital Building, Sukhipur-8, Siraha</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Sukhipur Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card has-photo" data-proj-cat="road" onclick="openProjectModal('rajbiraj-road')">
+                        <div class="prc-thumb"><img src="images/pro3.jpg" alt="Rajbiraj Municipality Road" loading="lazy"><span class="prc-num">#14</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Road Construction</span>
+                            <h3>Up-gradation of Different Inter-connected Roads within Rajbiraj Municipality</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Rajbiraj Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card has-photo" data-proj-cat="building" onclick="openProjectModal('ear-care')">
+                        <div class="prc-thumb"><img src="images/pro4.jpg" alt="Ear Care Centre Rajbiraj" loading="lazy"><span class="prc-num">#15</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Building Construction</span>
+                            <h3>Construction of Ear Care Centre at Rajbiraj, Nepal</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Impact Nepal</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card has-photo" data-proj-cat="building" onclick="openProjectModal('bardibas-malsc')">
+                        <div class="prc-thumb"><img src="images/pro5.jpg" alt="MALSC Bardibas Phase IV" loading="lazy"><span class="prc-num">#17</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Building Construction</span>
+                            <h3>Construction of Municipal Agricultural &amp; Livestock Centre (MALSC) under ECO Bardibas Phase IV</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Economic Corridor Office, Bardibas, Mahottari</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card has-photo" data-proj-cat="building" onclick="openProjectModal('sukhipur-health')">
+                        <div class="prc-thumb"><img src="images/pro6.jpg" alt="Sukhipur Health Post" loading="lazy"><span class="prc-num">#24</span></div>
+                        <div class="prc-body">
+                            <span class="work-badge">Building Construction</span>
+                            <h3>Sukhipur Health Post Primary Care Facility &amp; Outpatient Block</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Sukhipur Municipality, Siraha</p>
+                        </div>
+                    </article>
+
+                    <!-- Additional Projects from Company Profile Experience Record -->
+                    <article class="project-record-card" data-proj-cat="retrofitting">
+                        <div class="prc-head"><span class="prc-num-inline">#01</span><span class="work-badge">Retaining Structure</span></div>
+                        <div class="prc-body">
+                            <h3>Slope Stabilation / Mitigation Measure of Shree SS Chilaunedanda</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> CLPIU, Gyaneshwor Kathmandu</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#02</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of CTEVT Building of Rajbiraj-01</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Rajbiraj Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#03</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of School Building of Rajbiraj Municipality</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Rajbiraj Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#04</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of 3C12 Classroom Building of TSS, Gaushala</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Shree Tribhuvan Secondary School, Gaushala</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#05</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of 3C9 Classroom Building at Nigaul, Gaushala</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Gaushala Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#06</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Lab &amp; Laboratory Building of Shree Prasad SS, Aurahi</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Shree Prasad SS, Aurahi</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="road">
+                        <div class="prc-head"><span class="prc-num-inline">#07</span><span class="work-badge">Road Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Ring Road Construction Works (Baluwa Bazar–Roja Bazar–Padau Postal Road Section), Balba New Town, Mahottari</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> FPIU, Dhanusha</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="road">
+                        <div class="prc-head"><span class="prc-num-inline">#08</span><span class="work-badge">Road Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Balaba Municipality-11, Bhalani Adhyanpur–Dolathi–Bhetpur Road, Mahottari</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> IDO, Mahottari</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="road">
+                        <div class="prc-head"><span class="prc-num-inline">#09</span><span class="work-badge">Road Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Khairwani Border to Kheshraha Magarthana Road, Mahottari</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> IDO Dhanusha, Madhesh Province</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="water">
+                        <div class="prc-head"><span class="prc-num-inline">#10</span><span class="work-badge">Water Supply</span></div>
+                        <div class="prc-body">
+                            <h3>Entire Construction Works for Mathillo Dungeshwor Loharekhola Baik Dullu Lifting Water Supply Project</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Federal Water Supply and Sanitation Division</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="retrofitting">
+                        <div class="prc-head"><span class="prc-num-inline">#11</span><span class="work-badge">Retrofitting</span></div>
+                        <div class="prc-body">
+                            <h3>Construction / Retrofitting of 21 Schools Building in Okhaldhunga &amp; Sindhuli Districts</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> CLPIU, Kathmandu</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#12</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of School Buildings at Rajbiraj Municipality Ward No. 1, 4, 9, 13 &amp; 15</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Rajbiraj Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#13</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of College Building for Rajbiraj Polytechnic Institute, Ward No. 1</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Rajbiraj Municipality</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#19</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Assembly Hall at Kshireshwarnath Municipality, Dhanusha</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> FPIU, Dhanusha</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="road">
+                        <div class="prc-head"><span class="prc-num-inline">#20</span><span class="work-badge">Road Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Road Upgrading Works of Madar–Chaurhawa, Golbazar–Siraha–Saghure Udaypur, Mirchaya–Katari Ghurmi, Hilepani–Okhaldhunga Salleri Sadak With 4-lane (Siraha Bazar Hanuman Mandir to Madar) NH-20</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Road Division Lahan</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="water">
+                        <div class="prc-head"><span class="prc-num-inline">#21</span><span class="work-badge">Irrigation Channel</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Kajara Khola Kataghara Bandh ISP, Ramdhuni 6 and 7 Sunsari</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Water Resource and Irrigation Development Division, Sunsari</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="water">
+                        <div class="prc-head"><span class="prc-num-inline">#22</span><span class="work-badge">Irrigation Channel</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of Aadarsha Paini Irrigation Sub Project, Pathrisanischare 5, 6, 7</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> Water Resource and Irrigation Development Division, Biratnagar, Morang</p>
+                        </div>
+                    </article>
+                    <article class="project-record-card" data-proj-cat="building">
+                        <div class="prc-head"><span class="prc-num-inline">#23</span><span class="work-badge">Building Construction</span></div>
+                        <div class="prc-body">
+                            <h3>Construction of School Buildings in Three Schools of Jhapa and Morang Districts (having 2000+ students)</h3>
+                            <p class="prc-client"><i class="fas fa-building"></i> CLPIU, Bhaktapur</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -662,9 +1128,151 @@
                             </blockquote>
                             <p class="leader-bio">Leading Bhagat Group of Construction with years of hands-on civil execution experience, strategic foresight, and dedication to modern construction methodology.</p>
                             <div class="leader-contact">
-                                <a href="mailto:bhagatgrouppvt@gmail.com" class="btn btn-sm btn-outline-dark"><i class="fas fa-envelope"></i> Contact Office</a>
+                                <a href="mailto:info@bhagatgroupconstruction.com.np" class="btn btn-sm btn-outline-dark"><i class="fas fa-envelope"></i> Contact Office</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate Registration, Divisions & Financial Turnover -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Corporate Profile</span>
+                    <h2>Company Registration &amp; Financial Growth</h2>
+                    <p>Official corporate credentials, functional divisions, and audited annual turnover across seven fiscal years.</p>
+                </div>
+
+                <div class="profile-two-col" data-aos="fade-up">
+                    <div class="profile-panel">
+                        <h3><i class="fas fa-id-card"></i> Basic Company Information</h3>
+                        <table class="profile-kv-table">
+                            <tbody>
+                                <tr><th>Company Name</th><td>Bhagat Group of Construction Pvt. Ltd.</td></tr>
+                                <tr><th>Country of Registration</th><td>Nepal</td></tr>
+                                <tr><th>Year of Incorporation</th><td>Bhadra 06, 2075 B.S. (Private Firm Registration Act 2018)</td></tr>
+                                <tr><th>Registration No.</th><td>196819/075/076</td></tr>
+                                <tr><th>PAN / VAT No.</th><td>606618384, New Baneshwor</td></tr>
+                                <tr><th>Registered Office</th><td>New Baneshwor-10, Kathmandu, Bagmati Province</td></tr>
+                                <tr><th>Branch Office</th><td>Bardibas-01, Mahottari, Madhesh Province</td></tr>
+                                <tr><th>Managing Director</th><td>Mr. Dipendra Kumar Bhagat</td></tr>
+                                <tr><th>Contact Number</th><td>+977-9815769007</td></tr>
+                                <tr><th>Email</th><td>info@bhagatgroupconstruction.com.np</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="margin-top: 28px;"><i class="fas fa-sitemap"></i> Key Functional Divisions</h3>
+                        <ul class="profile-list">
+                            <li><i class="fas fa-check-circle"></i> Civil Construction Division</li>
+                            <li><i class="fas fa-check-circle"></i> Infrastructure &amp; Road Works Division</li>
+                            <li><i class="fas fa-check-circle"></i> Structural Rehabilitation &amp; Retrofitting Division</li>
+                            <li><i class="fas fa-check-circle"></i> Mechanical &amp; Fabrication Support</li>
+                            <li><i class="fas fa-check-circle"></i> Survey, Design &amp; Technical Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-panel">
+                        <h3><i class="fas fa-chart-line"></i> Annual Turnover (Fiscal Years 2075/76 – 2081/82)</h3>
+                        <table class="profile-data-table compact">
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Fiscal Year</th>
+                                    <th>Turnover Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>2081/2082</td><td><strong>NRs 37,84,64,781.00</strong></td></tr>
+                                <tr><td>2</td><td>2080/2081</td><td>NRs 14,56,60,817.00</td></tr>
+                                <tr><td>3</td><td>2079/2080</td><td>NRs 25,39,48,373.00</td></tr>
+                                <tr><td>4</td><td>2078/2079</td><td>NRs 18,21,18,352.00</td></tr>
+                                <tr><td>5</td><td>2077/2078</td><td>NRs 1,93,95,934.00</td></tr>
+                                <tr><td>6</td><td>2076/2077</td><td>NRs 1,10,68,680.00</td></tr>
+                                <tr><td>7</td><td>2075/2076</td><td>NRs 55,45,970.00</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="margin-top: 28px;"><i class="fas fa-university"></i> Primary Banking Partners</h3>
+                        <div class="bank-chips">
+                            <span class="bank-chip"><i class="fas fa-landmark"></i> Citizen Bank International Ltd.</span>
+                            <span class="bank-chip"><i class="fas fa-landmark"></i> Nabil Bank Limited</span>
+                            <span class="bank-chip"><i class="fas fa-landmark"></i> NMB Bank Ltd.</span>
+                            <span class="bank-chip"><i class="fas fa-landmark"></i> Agriculture Development Bank Limited (ADBL)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment & Subsidiary Network -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Operational Capacity</span>
+                    <h2>Equipment Fleet &amp; Associate Network</h2>
+                    <p>In-house survey instruments, heavy machinery, fabrication tools, and associate companies ensuring uninterrupted execution.</p>
+                </div>
+
+                <div class="equipment-grid" data-aos="fade-up">
+                    <div class="equipment-card">
+                        <div class="equipment-head"><i class="fas fa-compass"></i><h4>Survey Equipment</h4></div>
+                        <ul>
+                            <li><span>Geo Fennel Total Station FTS 310 (w/ prism)</span><strong>3</strong></li>
+                            <li><span>Topion Auto Level with Tripod</span><strong>6</strong></li>
+                            <li><span>Levelling Staff (with bubbles cover)</span><strong>6</strong></li>
+                            <li><span>Pedometer</span><strong>3</strong></li>
+                            <li><span>Abney Hand Level (Telescopic)</span><strong>2</strong></li>
+                            <li><span>GPS &amp; Magnetic Compass</span><strong>2 each</strong></li>
+                            <li><span>Survey Drone</span><strong>1</strong></li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-head"><i class="fas fa-truck-moving"></i><h4>Vehicles &amp; Heavy Machinery</h4></div>
+                        <ul>
+                            <li><span>Truck / Tipper</span><strong>7</strong></li>
+                            <li><span>Backhoe Loader</span><strong>3</strong></li>
+                            <li><span>Tractor</span><strong>3</strong></li>
+                            <li><span>Excavator &amp; Paver</span><strong>1 each</strong></li>
+                            <li><span>Single Drum, Pneumatic &amp; Tandem Rollers</span><strong>1 each</strong></li>
+                            <li><span>Bitumen Distributor &amp; Trailer Body Truck</span><strong>1 each</strong></li>
+                            <li><span>4WD Pickup &amp; 2-Wheelers</span><strong>1 &amp; 7</strong></li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-head"><i class="fas fa-cogs"></i><h4>Fabrication Equipment</h4></div>
+                        <ul>
+                            <li><span>Cutter Machine (14 inch)</span><strong>8</strong></li>
+                            <li><span>Generator (6 KVA)</span><strong>6</strong></li>
+                            <li><span>Angle Grinder (4 inch)</span><strong>4</strong></li>
+                            <li><span>Welding Machine</span><strong>3</strong></li>
+                            <li><span>Generator (20 KVA)</span><strong>1</strong></li>
+                            <li><span>Lathe Machine, Gas Welding &amp; Gas Cutter</span><strong>1 each</strong></li>
+                        </ul>
+                    </div>
+                    <div class="equipment-card">
+                        <div class="equipment-head"><i class="fas fa-hard-hat"></i><h4>Construction &amp; Erection</h4></div>
+                        <ul>
+                            <li><span>Vibrators (Different Capacity)</span><strong>12 sets</strong></li>
+                            <li><span>Concrete Mixer Machine</span><strong>6 nos</strong></li>
+                            <li><span>Hilti Gun Set with Accessories</span><strong>4 sets</strong></li>
+                            <li><span>Jumper</span><strong>3 nos</strong></li>
+                            <li><span>Concrete Mixer Machine with Lift</span><strong>2 sets</strong></li>
+                            <li><span>Self-Loading Concrete Mixer (Car Mix)</span><strong>1 no</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="profile-panel" style="margin-top: 32px;" data-aos="fade-up">
+                    <h3><i class="fas fa-network-wired"></i> Subsidiary &amp; Associated Companies</h3>
+                    <div class="associates-grid">
+                        <div class="associate-item"><strong>Supreme Allied Construction &amp; Suppliers Pvt. Ltd.</strong><span>Rajbiraj-3, Saptari</span></div>
+                        <div class="associate-item"><strong>Radiant Builder and Engineering Services Pvt. Ltd.</strong><span>Bardibas-01, Mahottari</span></div>
+                        <div class="associate-item"><strong>Bluesphere Construction and Suppliers Pvt. Ltd.</strong><span>Rajbiraj-03, Saptari</span></div>
+                        <div class="associate-item"><strong>Precision Fabrication Pvt. Ltd.</strong><span>Bardibas-01, Mahottari</span></div>
+                        <div class="associate-item"><strong>3D Engineering Consultancy Pvt. Ltd.</strong><span>Shambhunath-06, Saptari</span></div>
+                        <div class="associate-item"><strong>Mission Construction &amp; Suppliers Pvt. Ltd.</strong><span>Kathmandu-10, New Baneshwor</span></div>
                     </div>
                 </div>
             </div>
@@ -710,11 +1318,98 @@
                             <p>Work directly alongside veteran engineers, site supervisors, and technical consultants.</p>
                         </div>
                     </div>
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div class="feature-content">
+                            <h4>Competitive Benefits</h4>
+                            <p>Timely remuneration, field &amp; camp allowances on remote sites, and long-term career stability.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="apply-form" class="section-padding bg-light">
+        <!-- Open Positions Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <span class="section-subtitle">Now Hiring</span>
+                    <h2>Current Open Positions</h2>
+                    <p>Explore active roles across our Kathmandu head office, Bardibas hub, and active project sites.</p>
+                </div>
+                <div class="jobs-grid" data-aos="fade-up">
+                    <article class="job-card">
+                        <div class="job-card-top">
+                            <span class="job-type-badge">Full-Time</span>
+                            <span class="job-loc"><i class="fas fa-map-marker-alt"></i> Kathmandu / Project Sites</span>
+                        </div>
+                        <h3>Site Civil Engineer</h3>
+                        <p>Lead on-site execution, QA/QC, BOQ verification, and contractor coordination for building, road, and hydropower civil works.</p>
+                        <div class="job-tags">
+                            <span>B.E. Civil</span>
+                            <span>2+ Yrs Exp</span>
+                            <span>QA/QC</span>
+                        </div>
+                        <button type="button" onclick="applyForRole('Civil Engineering')" class="btn btn-sm btn-primary job-apply-btn">
+                            Apply for Role <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-card-top">
+                            <span class="job-type-badge">Full-Time</span>
+                            <span class="job-loc"><i class="fas fa-map-marker-alt"></i> Madhesh &amp; Koshi Provinces</span>
+                        </div>
+                        <h3>Sub-Engineer / Site Overseer</h3>
+                        <p>Supervise daily site labor, concrete mixing, reinforcement checks, and measurement books across municipal and school projects.</p>
+                        <div class="job-tags">
+                            <span>Diploma in Civil</span>
+                            <span>Site Supervision</span>
+                            <span>Billing</span>
+                        </div>
+                        <button type="button" onclick="applyForRole('Site Supervision / Overseer')" class="btn btn-sm btn-primary job-apply-btn">
+                            Apply for Role <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-card-top">
+                            <span class="job-type-badge">Full-Time</span>
+                            <span class="job-loc"><i class="fas fa-map-marker-alt"></i> Field Sites Across Nepal</span>
+                        </div>
+                        <h3>Senior Surveyor (Total Station)</h3>
+                        <p>Conduct topographic surveys, road alignment, and layout staking using Geo Fennel Total Station, Auto Level, GPS, and Survey Drone.</p>
+                        <div class="job-tags">
+                            <span>Total Station</span>
+                            <span>Auto Level</span>
+                            <span>Road &amp; Canal</span>
+                        </div>
+                        <button type="button" onclick="applyForRole('Quality Control & Surveying')" class="btn btn-sm btn-primary job-apply-btn">
+                            Apply for Role <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </article>
+
+                    <article class="job-card">
+                        <div class="job-card-top">
+                            <span class="job-type-badge">Full-Time</span>
+                            <span class="job-loc"><i class="fas fa-map-marker-alt"></i> Bardibas / Highway Sites</span>
+                        </div>
+                        <h3>Heavy Equipment Operator</h3>
+                        <p>Operate and maintain excavators, backhoe loaders, pavers, and rollers for highway upgrading and earthwork projects.</p>
+                        <div class="job-tags">
+                            <span>Valid License</span>
+                            <span>Excavator / Paver</span>
+                            <span>Safety Certified</span>
+                        </div>
+                        <button type="button" onclick="applyForRole('Heavy Machinery & Equipment Operator')" class="btn btn-sm btn-primary job-apply-btn">
+                            Apply for Role <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply-form" class="section-padding">
             <div class="container" data-aos="fade-up">
                 <div class="section-title" style="text-align: center; margin-bottom: 40px;">
                     <span class="section-subtitle">Apply Today</span>
@@ -790,25 +1485,25 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a onclick="switchView('home')" href="javascript:void(0)" class="logo">
+                    <a onclick="switchView('home'); return false;" href="#home" class="logo">
                         <img src="images/logo1.png" alt="Bhagat Group Logo" class="nav-logo">
                     </a>
                     <p style="margin-top: 15px;">Bhagat Group of Construction Pvt. Ltd. is incorporated under the Private Firm Registration Act 2018 (2075 B.S.), dedicated to delivering national-scale infrastructure with integrity and precision.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/share/17MLLm4iAN/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/9779815769007" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:bhagatgrouppvt@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:info@bhagatgroupconstruction.com.np" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a onclick="switchView('home')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a onclick="switchView('about')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a onclick="switchView('home', 'services')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> Our Services</a></li>
-                        <li><a onclick="switchView('home', 'projects')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> Projects Portfolio</a></li>
-                        <li><a onclick="switchView('careers')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> Career Openings</a></li>
-                        <li><a onclick="switchView('home', 'contact')" href="javascript:void(0)"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a onclick="switchView('home'); return false;" href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a onclick="switchView('about'); return false;" href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a onclick="switchView('services'); return false;" href="#services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                        <li><a onclick="switchView('projects'); return false;" href="#projects"><i class="fas fa-chevron-right"></i> Projects Portfolio</a></li>
+                        <li><a onclick="switchView('careers'); return false;" href="#careers"><i class="fas fa-chevron-right"></i> Career Openings</a></li>
+                        <li><a onclick="switchView('home', 'contact'); return false;" href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -817,7 +1512,7 @@
                         <li><i class="fas fa-map-marker-alt"></i> <strong>Head Office:</strong> New Baneshwor-10, Kathmandu</li>
                         <li><i class="fas fa-building"></i> <strong>Branch Office:</strong> Bardibas-01, Mahottari</li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779815769007">+977-9815769007</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:bhagatgrouppvt@gmail.com">bhagatgrouppvt@gmail.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@bhagatgroupconstruction.com.np">info@bhagatgroupconstruction.com.np</a></li>
                     </ul>
                 </div>
             </div>
